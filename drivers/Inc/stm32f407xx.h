@@ -8,6 +8,10 @@
 #ifndef INC_STM32F407XX_H_
 #define INC_STM32F407XX_H_
 
+#include <stdint.h>
+
+#define __vo volatile	// shorthand for volatile
+
 /*
  * 	Base addresses of Flash and SRAM memories
  * 	Reference Manual:
@@ -70,6 +74,23 @@
 #define USART1_BASEADDR				(APB2PERIPH_BASEADDR + 0x1000)
 #define USART6_BASEADDR				(APB2PERIPH_BASEADDR + 0x1400)
 #define SYSCFG_BASEADDR				(APB2PERIPH_BASEADDR + 0x3800)
+
+
+/*************************************peripheral register definition structures*******************************************/
+
+typedef struct
+{
+	__vo uint32_t MODER;					/*!< GPIO port mode register,								Address offset: 0x00 >*/
+	__vo uint32_t OTYPER;				/*!< GPIO port output type register,						Address offset: 0x04 >*/
+	__vo uint32_t OSPEEDR;				/*!< GPIO port output speed register,						Address offset: 0x08 >*/
+	__vo uint32_t PUPDR;					/*!< GPIO port pull-up/pull-down register,					Address offset: 0x0C >*/
+	__vo uint32_t IDR;					/*!< GPIO port input data register,							Address offset: 0x10 >*/
+	__vo uint32_t ODR;					/*!< GPIO port output data register,						Address offset: 0x14 >*/
+	__vo uint32_t BSRR;					/*!< GPIO port bit set/reset register,						Address offset: 0x18 >*/
+	__vo uint32_t LCKR;					/*!< GPIO port configuration lock register,					Address offset: 0x1C >*/
+	__vo uint32_t AFR[2];				/*!< GPIO alternate function low and high registers,		Address offset: 0x20 and 0x24 >*/
+}GPIO_RegDef_t;
+
 
 
 #endif /* INC_STM32F407XX_H_ */
