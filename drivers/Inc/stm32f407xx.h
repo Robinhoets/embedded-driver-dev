@@ -50,8 +50,6 @@
 #define GPIOG_BASEADDR				(AHB1PERIPH_BASEADDR + 0x1800)
 #define GPIOH_BASEADDR				(AHB1PERIPH_BASEADDR + 0x1C00)
 #define GPIOI_BASEADDR				(AHB1PERIPH_BASEADDR + 0x2000)
-#define GPIOJ_BASEADDR				(AHB1PERIPH_BASEADDR + 0x2400)
-#define GPIOK_BASEADDR				(AHB1PERIPH_BASEADDR + 0x2800)
 #define RCC_BASEADDR				(AHB1PERIPH_BASEADDR + 0x3800)
 
 /*
@@ -139,16 +137,66 @@ typedef struct
 #define GPIOG			(GPIO_RegDef_t*) GPIOG_BASEADDR;
 #define GPIOH			(GPIO_RegDef_t*) GPIOH_BASEADDR;
 #define GPIOI			(GPIO_RegDef_t*) GPIOI_BASEADDR;
-#define GPIOJ			(GPIO_RegDef_t*) GPIOJ_BASEADDR;
-#define GPIOK			(GPIO_RegDef_t*) GPIOK_BASEADDR;
 
 #define RCC				(RCC_RegDef_t*) RCC_BASEADDR;
 
 /*
  * 	Clock Enable Macros for GPIOx peripherals
  */
+#define GPIOA_PCLK_EN()		( RCC->AHB1ENR |= (1 << 0 ) )	// GPIOA Enable
+#define GPIOB_PCLK_EN()		( RCC->AHB1ENR |= (1 << 1 ) )	// GPIOB Enable
+#define GPIOC_PCLK_EN()		( RCC->AHB1ENR |= (1 << 2 ) )	// GPIOC Enable
+#define GPIOD_PCLK_EN()		( RCC->AHB1ENR |= (1 << 3 ) )	// GPIOD Enable
+#define GPIOE_PCLK_EN()		( RCC->AHB1ENR |= (1 << 4 ) )	// GPIOE Enable
+#define GPIOF_PCLK_EN()		( RCC->AHB1ENR |= (1 << 5 ) )	// GPIOF Enable
+#define GPIOG_PCLK_EN()		( RCC->AHB1ENR |= (1 << 6 ) )	// GPIOG Enable
+#define GPIOH_PCLK_EN()		( RCC->AHB1ENR |= (1 << 7 ) )	// GPIOH Enable
+#define GPIOI_PCLK_EN()		( RCC->AHB1ENR |= (1 << 8 ) )	// GPIOI Enable
 
+/*
+ * 	Clock Enable Macros for I2Cx peripherals
+ */
+#define I2C1_PCLK_EN()		( RCC->APB1ENR |= (1 << 21 ) )	// I2C1 Enable
+#define I2C2_PCLK_EN()		( RCC->APB1ENR |= (1 << 22 ) )	// I2C1 Enable
+#define I2C3_PCLK_EN()		( RCC->APB1ENR |= (1 << 23 ) )	// I2C1 Enable
 
+/*
+ * 	Clock Enable Macros for SPIx peripherals
+ */
+#define SPI1_PCLK_EN()		( RCC->APB2ENR |= (1 << 12 ) )	// SPI1 Enable
+#define SPI2_PCLK_EN()		( RCC->APB1ENR |= (1 << 14 ) )	// SPI1 Enable
+#define SPI3_PCLK_EN()		( RCC->APB1ENR |= (1 << 15 ) )	// SPI1 Enable
 
+/*
+ *	Clock Enable Macros for USARTx peripherals
+ */
+#define USART1_PCLK_EN()		( RCC->APB2ENR |= (1 << 4 ) )	// USART1 Enable
+#define UART2_PCLK_EN()			( RCC->APB1ENR |= (1 << 17 ) )	// UART2 Enable
+#define UART3_PCLK_EN()			( RCC->APB1ENR |= (1 << 18 ) )	// UART3 Enable
+#define UART4_PCLK_EN()			( RCC->APB1ENR |= (1 << 19 ) )	// UART4 Enable
+#define UART5_PCLK_EN()			( RCC->APB1ENR |= (1 << 20 ) )	// UART5 Enable
+#define USART6_PCLK_EN()		( RCC->APB2ENR |= (1 << 5 ) )	// USART6 Enable
+
+/*
+ * 	Clock Enable Macros for SYSCFG peripheral
+ */
+#define SYSCFG_PCLK_EN()		( RCC->APB2ENR |= (1 << 14) )
+
+/*
+ * 	Clock Disable Macros for GPIOx peripherals
+ */
+#define GPIO_PCLK_DI()			( RCC->AHB1ENR &= ~(1 << 0) )
+
+/*
+ * 	Clock Disable Macros for I2Cx peripherals
+ */
+
+/*
+ * 	Clock Disable Macros for SPIx peripherals
+ */
+
+/*
+ * 	Clock Disable Macros for USARTx peripherals
+ */
 
 #endif /* INC_STM32F407XX_H_ */
