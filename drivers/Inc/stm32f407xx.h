@@ -185,18 +185,43 @@ typedef struct
 /*
  * 	Clock Disable Macros for GPIOx peripherals
  */
-#define GPIO_PCLK_DI()			( RCC->AHB1ENR &= ~(1 << 0) )
+#define GPIOA_PCLK_DI()			( RCC->AHB1ENR &= ~(1 << 0 ) )
+#define GPIOB_PCLK_DI()			( RCC->AHB1ENR &= ~(1 << 1 ) )	// GPIOB Disable
+#define GPIOC_PCLK_DI()			( RCC->AHB1ENR &= ~(1 << 2 ) )	// GPIOC Disable
+#define GPIOD_PCLK_DI()			( RCC->AHB1ENR &= ~(1 << 3 ) )	// GPIOD Disable
+#define GPIOE_PCLK_DI()			( RCC->AHB1ENR &= ~(1 << 4 ) )	// GPIOE Disable
+#define GPIOF_PCLK_DI()			( RCC->AHB1ENR &= ~(1 << 5 ) )	// GPIOF Disable
+#define GPIOG_PCLK_DI()			( RCC->AHB1ENR &= ~(1 << 6 ) )	// GPIOG Disable
+#define GPIOH_PCLK_DI()			( RCC->AHB1ENR &= ~(1 << 7 ) )	// GPIOH Disable
+#define GPIOI_PCLK_DI()			( RCC->AHB1ENR &= ~(1 << 8 ) )	// GPIOI Disable
 
 /*
  * 	Clock Disable Macros for I2Cx peripherals
  */
+#define I2C1_PCLK_DI()			( RCC->APB1ENR &= ~(1 << 21 ) )	// I2C1 Disable
+#define I2C2_PCLK_DI()			( RCC->APB1ENR &= ~(1 << 22 ) )	// I2C1 Disable
+#define I2C3_PCLK_DI()			( RCC->APB1ENR &= ~(1 << 23 ) )	// I2C1 Disable
 
 /*
  * 	Clock Disable Macros for SPIx peripherals
  */
+#define SPI1_PCLK_DI()			( RCC->APB2ENR &= ~(1 << 12 ) )	// SPI1 Disable
+#define SPI2_PCLK_DI()			( RCC->APB1ENR &= ~(1 << 14 ) )	// SPI1 Disable
+#define SPI3_PCLK_DI()			( RCC->APB1ENR &= ~(1 << 15 ) )	// SPI1 Disable
 
 /*
  * 	Clock Disable Macros for USARTx peripherals
  */
+#define USART1_PCLK_DI()		( RCC->APB2ENR &= ~(1 << 4 ) )	// USART1 Disable
+#define UART2_PCLK_DI()			( RCC->APB1ENR &= ~(1 << 17 ) )	// UART2 Disable
+#define UART3_PCLK_DI()			( RCC->APB1ENR &= ~(1 << 18 ) )	// UART3 Disable
+#define UART4_PCLK_DI()			( RCC->APB1ENR &= ~(1 << 19 ) )	// UART4 Disable
+#define UART5_PCLK_DI()			( RCC->APB1ENR &= ~(1 << 20 ) )	// UART5 Disable
+#define USART6_PCLK_DI()		( RCC->APB2ENR &= ~(1 << 5 ) )	// USART6 Disable
+
+/*
+ * 	Clock Disable Macros for SYSCFG peripheral
+ */
+#define SYSCFG_PCLK_DI()		( RCC->APB2ENR &= ~(1 << 14) )
 
 #endif /* INC_STM32F407XX_H_ */
