@@ -38,28 +38,179 @@ typedef struct
 /*
  * 	Peripheral Clock Setup
  */
-void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi);
+
+/***************************************************************************
+ * @fn				- GPIO_PeriClockControl
+ *
+ * @brief			- Enables or diables the peripheral clock for a given GPIO port.
+ *
+ * @param[in]		- Base address of the GPIO peripheral.
+ * @param[in]		- ENABLE or DISABLE macros.
+ *
+ * @return			- none
+ *
+ * @Note			- none
+ */
+void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
+{
+
+}
 
 /*
  * 	Initialize and De-initialize
  */
-void GPIO_Init(GPIO_Handle_t *pGPIOHandle);
-void GPIO_DeInit(GPIO_RegDef_t *pGPIOx);									// take base address to access reset
+
+/**************************************************************************
+ * @fn				- GPIO_Init
+ *
+ * @brief			-
+ *
+ * @param[in]		-
+ *
+ * @return			-
+ *
+ * @Note			-
+ */
+void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
+{
+
+}
+
+/***************************************************************************
+ * @fn				- GPIO_DeInit
+ *
+ * @brief			-
+ *
+ * @param[in]		-
+ *
+ * @return			- none
+ *
+ * @Note			-
+ */
+void GPIO_DeInit(GPIO_RegDef_t *pGPIOx)
+{
+
+}
 
 /*
  * 	Data read and write
  */
-uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);
-uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx);						// 16 pins
-void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Value);
-void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t Value);
-void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);
+
+/***************************************************************************
+ * @fn				-
+ *
+ * @brief			-
+ *
+ * @param[in]		-
+ *
+ * @return			-
+ *
+ * @Note			-
+ */
+uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
+{
+
+}
+
+/***************************************************************************
+ * @fn				-
+ *
+ * @brief			-
+ *
+ * @param[in]		-
+ *
+ * @return			-
+ *
+ * @Note			-
+ */
+uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx)
+{
+
+}
+
+/***************************************************************************
+ * @fn				-
+ *
+ * @brief			-
+ *
+ * @param[in]		-
+ *
+ * @return			-
+ *
+ * @Note			-
+ */
+void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Value)
+{
+
+}
+
+/***************************************************************************
+ * @fn				-
+ *
+ * @brief			-
+ *
+ * @param[in]		-
+ *
+ * @return			-
+ *
+ * @Note			-
+ */
+void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t Value)
+{
+
+}
+
+/***************************************************************************
+ * @fn				-
+ *
+ * @brief			-
+ *
+ * @param[in]		-
+ *
+ * @return			-
+ *
+ * @Note			-
+ */
+void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
+{
+
+}
 
 /*
  * 	IRQ Configuration and ISR handling
  */
-void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi);
-void GPIO_IRQHandling(uint8_t PinNumber);
+
+/***************************************************************************
+ * @fn				-
+ *
+ * @brief			-
+ *
+ * @param[in]		-
+ *
+ * @return			-
+ *
+ * @Note			-
+ */
+void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi)
+{
+
+}
+
+/***************************************************************************
+ * @fn				-
+ *
+ * @brief			-
+ *
+ * @param[in]		-
+ *
+ * @return			-
+ *
+ * @Note			-
+ */
+void GPIO_IRQHandling(uint8_t PinNumber)
+{
+
+}
 
 
 #endif /* INC_STM32F407XX_GPIO_DRIVER_H_ */
