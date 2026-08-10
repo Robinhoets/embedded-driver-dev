@@ -111,17 +111,26 @@ void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
 /**************************************************************************
  * @fn				- GPIO_Init
  *
- * @brief			-
+ * @brief			- Initialize the given GPIO by configuring it with the settings passed
+ * 						in the parameter
  *
- * @param[in]		-
+ * @param[in]		- *pGPIOHandle points the the GPIO pin we want to initialize
  *
- * @return			-
+ * @return			- none
  *
  * @Note			-
  */
 void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 {
+	// (1) Configure the mode of the gpio pin
 
+	// (2) Configure the speed
+
+	// (3) configure the pull up and pull down settings
+
+	// (4) Configure the output type
+
+	// (5) Configure the alternate functionality
 }
 
 /***************************************************************************
