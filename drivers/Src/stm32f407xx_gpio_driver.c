@@ -319,19 +319,21 @@ void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t Value)
 }
 
 /***************************************************************************
- * @fn				-
+ * @fn				- GPIO_ToggleOutputPin
  *
- * @brief			-
+ * @brief			- Change the state of the pin to the opposite of it's current state.
  *
- * @param[in]		-
+ * @param[in]		- Address of port.
  *
- * @return			-
+ * @param[in]		- Which pin to toggle.
+ *
+ * @return			- none
  *
  * @Note			-
  */
 void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 {
-
+	pGPIOx->ODR ^= ( 1 << PinNumber );
 }
 
 /*
