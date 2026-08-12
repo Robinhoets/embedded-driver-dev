@@ -256,19 +256,21 @@ uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 }
 
 /***************************************************************************
- * @fn				-
+ * @fn				- GPIO_ReadFromInputPort
  *
- * @brief			-
+ * @brief			- Read all data from port.
  *
- * @param[in]		-
+ * @param[in]		- Address of port to read from.
  *
- * @return			-
+ * @return			- uint16_t size of data in port
  *
  * @Note			-
  */
 uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx)
 {
-
+	uint16_t value;
+	value = (uint16_t)pGPIOx->IDR;
+	return value;
 }
 
 /***************************************************************************
