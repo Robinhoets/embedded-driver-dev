@@ -274,35 +274,48 @@ uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx)
 }
 
 /***************************************************************************
- * @fn				-
+ * @fn				- GPIO_WriteToOutputPin
  *
- * @brief			-
+ * @brief			- Write to a specific pin 1 or 0 based on Value.
  *
- * @param[in]		-
+ * @param[in]		- Address of port.
  *
- * @return			-
+ * @param[in]		- The pin in the port.
+ *
+ * @param[in]		- Whether to set or clear the pin.
+ *
+ * @return			- none
  *
  * @Note			-
  */
 void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Value)
 {
-
+	if(Value == GPIO_PIN_SET)
+	{
+		// write 1
+		pGPIOx->ODR |= ( 1 << PinNumber );
+	}
+	else
+	{
+		// write 0
+		pGPIOx->ODR &= ~( 1 << PinNumber );
+	}
 }
 
 /***************************************************************************
- * @fn				-
+ * @fn				- GPIO_WriteToOutputPort
  *
- * @brief			-
+ * @brief			- Address of port.
  *
- * @param[in]		-
+ * @param[in]		- Value to be put in ODR register.
  *
- * @return			-
+ * @return			- none
  *
  * @Note			-
  */
 void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t Value)
 {
-
+	pGPIOx->ODR = Value;
 }
 
 /***************************************************************************
