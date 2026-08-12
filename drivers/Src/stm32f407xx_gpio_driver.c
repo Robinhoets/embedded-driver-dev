@@ -178,7 +178,7 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 /***************************************************************************
  * @fn				- GPIO_DeInit
  *
- * @brief			-
+ * @brief			- De-initialize a GPIO at a given address
  *
  * @param[in]		- base address of the GPIO port
  *
@@ -232,19 +232,27 @@ void GPIO_DeInit(GPIO_RegDef_t *pGPIOx)
  */
 
 /***************************************************************************
- * @fn				-
+ * @fn				- GPIO_ReadFromInputPin
  *
- * @brief			-
+ * @brief			- Read value from a specific pin.
  *
- * @param[in]		-
+ * @param[in]		- Address of the register that holds pin
  *
- * @return			-
+ * @param[in]		- The pin number that holds the value we want to return.
+ *
+ * @return			- 0 or 1
  *
  * @Note			-
  */
 uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 {
-
+	uint8_t value;
+	/*
+	 * 	Shift bit wanted to lsb.
+	 * 	Make every bit position 0 except for lsb.
+	 */
+	value = (uint8_t) ( (pGPIOx->IDR >> PinNumber) & 0x00000001 );
+	return value;
 }
 
 /***************************************************************************
